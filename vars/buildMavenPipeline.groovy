@@ -34,7 +34,7 @@ def call(Closure object) {
              }
              stage("Quality Gate") {
                  steps {
-                     sonarWaitForQualityGate
+                     sonarWaitForQualityGate()
                  }
              }
              stage("Building the image"){

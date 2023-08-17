@@ -1,4 +1,10 @@
-def call(config = [:]) {
+def call(Closure object) {
+    Map config = [:]
+
+    object.resolveStrategy = Closure.DELEGATE_FIRST
+    object.delegate = config
+    object()
+
     pipeline{
         agent {
             label config.agent
